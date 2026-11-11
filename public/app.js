@@ -15,8 +15,9 @@ function setupSettings(){
   $('#phone-link').href=`tel:+${s.whatsapp.replace(/\D/g,'')}`;
   if(s.heroTitle){const lines=s.heroTitle.split('\n');$('#hero-title').innerHTML=lines.map((line,i)=>i===lines.length-1?`<em>${esc(line)}</em>`:esc(line)).join('<br>');}
   if(s.heroSubtitle)$('#hero-description').textContent=s.heroSubtitle;
-  const instagram=$('#instagram-link');
-  if(s.instagramUrl&&safeUrl(s.instagramUrl)){try{const url=new URL(s.instagramUrl);if(url.protocol==='https:'&&(url.hostname==='instagram.com'||url.hostname==='www.instagram.com')){instagram.href=url.href;instagram.hidden=false;}}catch{instagram.hidden=true;}}
+  const instagramLinks=document.querySelectorAll('#instagram-link, .instagram-link');
+  instagramLinks.forEach(link=>{link.hidden=true;link.removeAttribute('href');});
+  if(s.instagramUrl&&safeUrl(s.instagramUrl)){try{const url=new URL(s.instagramUrl);if(url.protocol==='https:'&&(url.hostname==='instagram.com'||url.hostname==='www.instagram.com')){instagramLinks.forEach(link=>{link.href=url.href;link.hidden=false;});}}catch{/* Keep links hidden for invalid URLs. */}}
   if(s.heroImage&&safeUrl(s.heroImage)){$('.hero-art>img').src=safeUrl(s.heroImage);$('.hero-art>img').alt=s.heroImageAlt||'FastyFood';}
   if(s.logo&&safeUrl(s.logo)){$('.brand-mark').src=safeUrl(s.logo);$('.brand-mark').style.filter='none';$('.brand-mark').style.mixBlendMode='normal';}
   const details=$('#location-details');details.replaceChildren();
