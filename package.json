@@ -1,0 +1,12 @@
+{
+  "name": "fastyfood-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "configure": "node scripts/configure.mjs",
+    "studio": "npm --prefix studio run dev"
+  }
+}

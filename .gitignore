@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.tools/
+tmp/
+.env*
+!.env.example
+studio/.sanity/
+studio/dist/
+*.zip
+*-preview.jpg
+mobile-menu.jpg
+studio/schema-check.json

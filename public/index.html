@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#111110">
+  <meta name="description" content="El menú de FastyFood: hamburguesas, panchos gratinados, papas tornado, milkshakes y smoothies. Mirá los precios y contactanos por WhatsApp.">
+  <title>FastyFood · Nuestro menú</title>
+  <link rel="icon" href="assets/logo.webp" type="image/webp">
+  <link rel="preload" as="image" href="assets/burger-hero.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#menu">Ir al menú</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="FastyFood, inicio">
+      <img src="assets/logo.webp" width="70" height="70" alt="" class="brand-mark">
+      <span><strong>FASTYFOOD</strong><small>HAMBURGUESERÍA & PANCHOS</small></span>
+    </a>
+    <nav class="header-links" aria-label="Navegación principal"><a href="#menu">El menú</a><a href="#promos">Promos</a><a href="#antojos">En acción</a></nav>
+    <a class="button button-outline header-contact whatsapp-link" href="#contacto"><span class="chat-icon" aria-hidden="true">↗</span> WhatsApp</a>
+  </header>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> BIENVENIDO A FASTYFOOD</p>
+        <h1 id="hero-title">EL ANTOJO<br>TIENE <em>NOMBRE.</em></h1>
+        <p id="hero-description">Hamburguesas, panchos, papas y algo bien fresco. Encontrá tu próximo favorito.</p>
+        <a class="button button-yellow" href="#menu">EXPLORAR EL MENÚ <span aria-hidden="true">↘</span></a>
+        <div class="hero-note"><span aria-hidden="true">✳</span> Elegí tu favorito. Nosotros ponemos el sabor.</div>
+      </div>
+      <div class="hero-art">
+        <img src="assets/burger-hero.webp" width="609" height="304" alt="Hamburguesa doble con queso y papas fritas" fetchpriority="high">
+        <div class="hero-photo-shade"></div><span class="photo-caption">ASÍ SE VE UN BUEN ANTOJO.</span>
+        <div class="hero-stamp" aria-hidden="true">MUCHO<br><b>SABOR.</b><span>FASTYFOOD</span></div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><span>BURGERS</span>✳<span>PANCHOS</span>✳<span>PAPAS</span>✳<span>MILKSHAKES</span>✳<span>SMOOTHIES</span>✳<span>FASTYFOOD</span>✳</div>
+
+    <section id="menu" class="menu-section section-wrap" aria-labelledby="menu-title">
+      <div class="section-top"><div><p class="eyebrow yellow-text">HECHO PARA TU ANTOJO</p><h2 id="menu-title">NUESTRO <em>MENÚ.</em></h2></div><p class="section-aside">Elegí una categoría.<br>Encontrá tu próximo favorito.</p></div>
+      <div class="menu-toolbar">
+        <div id="categories" class="category-list" role="group" aria-label="Filtrar por categoría"></div>
+        <label class="search-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="¿Qué se te antoja?" aria-label="Buscar en el menú" autocomplete="off"></label>
+      </div>
+      <div id="menu-status" class="menu-status" role="status" aria-live="polite">Cargando el menú…</div>
+      <div id="menu-content"></div>
+      <noscript><p class="notice">Para explorar el menú necesitás activar JavaScript. También podés consultarnos al 11 2333-7893.</p></noscript>
+    </section>
+
+    <section id="promos" class="promo-section section-wrap" aria-labelledby="promos-title">
+      <div class="section-top"><div><p class="eyebrow">MEJOR SI COMPARTÍS</p><h2 id="promos-title">DOBLE <em>ANTOJO.</em></h2></div><span class="hand-note">¡Elegí tus sabores!</span></div>
+      <div id="promotions" class="promo-grid"></div>
+    </section>
+
+    <section id="antojos" class="video-section section-wrap" aria-labelledby="videos-title">
+      <div class="section-top"><div><p class="eyebrow yellow-text">DALE PLAY AL SABOR</p><h2 id="videos-title">MIRÁ LO QUE<br>TE <em>ESPERA.</em></h2></div><p class="section-aside">Un adelanto de<br>tu próximo pedido.</p></div>
+      <div id="videos" class="video-grid"></div>
+    </section>
+
+    <section id="contacto" class="contact-section section-wrap" aria-labelledby="contact-title">
+      <div><p class="eyebrow">¿YA SABÉS QUÉ ELEGIR?</p><h2 id="contact-title">HABLEMOS<br>DE <em>COMIDA.</em></h2><p>Consultanos por WhatsApp y sacate las ganas.</p></div>
+      <div class="contact-actions"><a class="button button-dark whatsapp-link" href="#contacto">ESCRIBINOS POR WHATSAPP <span aria-hidden="true">↗</span></a><a id="phone-link" class="phone-link" href="tel:+541123337893">11 2333-7893</a><div id="location-details"></div></div>
+    </section>
+  </main>
+  <footer><a class="footer-brand" href="#inicio">FASTYFOOD</a><p>Hamburguesería & panchos.</p><a href="#menu">Volver al menú ↑</a></footer>
+  <a class="floating-contact whatsapp-link" href="#contacto" aria-label="Contactar a FastyFood por WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.5-4.6A9 9 0 1 1 21 11.5Z"/><path d="M8 7c-2 2 3 8 6 8l2-2-3-1-1 1-2-2 1-1-1-3Z"/></svg><span>¿TE AYUDAMOS?</span></a>
+  <dialog id="detail-dialog" class="detail-dialog" aria-labelledby="detail-title"><div class="dialog-inner"><button id="close-dialog" class="dialog-close" aria-label="Cerrar detalle">×</button><div id="detail-media"></div><div class="dialog-copy"><p id="detail-label" class="eyebrow yellow-text"></p><h2 id="detail-title"></h2><p id="detail-description"></p><p id="detail-includes" class="include-badge"></p><p id="detail-price" class="detail-price"></p><a id="detail-contact" class="button button-yellow" href="#contacto">CONSULTAR POR WHATSAPP ↗</a></div></div></dialog>
+</body>
+</html>

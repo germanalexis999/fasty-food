@@ -1,0 +1,18 @@
+{
+  "name": "fastyfood-studio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev --host 127.0.0.1",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "login": "sanity login"
+  },
+  "dependencies": {
+    "@sanity/locale-es-es": "1.2.39",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "sanity": "6.22.0",
+    "styled-components": "6.6.0"
+  }
+}
